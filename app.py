@@ -19,4 +19,4 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, threaded=True)
 
 # python app.py
-# curl -X POST -H 'Content-Type: application/json' -d '{"number": 20}' http://localhost:5000/try_number
+# curl -X POST -H 'Content-Type: application/json' -d '{"code": "hola120"}' http://localhost:5000/try_number
