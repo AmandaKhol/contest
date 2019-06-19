@@ -10,7 +10,6 @@ def setup_app():
 
     # SETUP URLS
     app.add_url_rule('/try_number', methods=['POST'], view_func=try_number)
-
     app.add_url_rule('/followers', methods=['GET'], view_func=num_followers)
     return app
 
@@ -21,5 +20,4 @@ if __name__ == '__main__':
 
 # python app.py
 # curl -X POST -H 'Content-Type: application/json' -d '{"code": "hola120"}' http://localhost:5000/try_number
-# curl -X POST -H 'Content-Type: application/json' -d '{"code": "hola120"}' http://localhost:5000/followers
-# curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:5000/api/num_followers/
+# curl -X GET -H -d '{"code": "hola120"}' http://localhost:5000/followers
