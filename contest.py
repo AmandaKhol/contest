@@ -52,7 +52,7 @@ def check_file():
 
 def update_file():
     with open(file_name, 'w') as f:
-        f.write('{},{}'.format(followers,num))
+        f.write('{},{}'.format(followers, num))
 
 
 def get_number(code):
@@ -71,8 +71,11 @@ def get_number(code):
 
 
 def number_check(follower_number, number):
-    if follower_number%number == 0:
+    if follower_number % number == 0:
         return True
     else:
         return False
 
+def num_followers():
+    return jsonify({'message': str(followers)}), 200
+    
