@@ -20,4 +20,4 @@ if __name__ == '__main__':
 
 # python app.py
 # curl -X POST -H 'Content-Type: application/json' -d '{"code": "hola120"}' http://localhost:5000/try_number
-# curl -X GET -H -d '{"code": "hola120"}' http://localhost:5000/followers
+# curl -X GET -H -d http://localhost:5000/followers
