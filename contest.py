@@ -76,6 +76,6 @@ def number_check(follower_number, number):
     else:
         return False
 
-def num_followers():
-    return jsonify({'message': str(followers)}), 200
-    
+def num_foll():
+    return jsonify({"followers": str(followers)})
+
