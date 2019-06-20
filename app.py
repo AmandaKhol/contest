@@ -1,11 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
-
-<<<<<<< HEAD
-from contest import file_name, try_number, check_file, num_followers
-=======
 from contest import file_name, try_number, check_file, num_foll
->>>>>>> 5c68893e679d27b6a92b8098fcbf0e7a3d9c884e
+
 
 
 def setup_app():
