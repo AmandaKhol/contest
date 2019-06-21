@@ -1,6 +1,6 @@
 import os.path
 
-from flask import jsonify, request
+from flask import jsonify, request, render_template
 
 file_name = 'saved_number'
 num = 0
@@ -76,6 +76,6 @@ def number_check(follower_number, number):
     else:
         return False
 
-
 def num_foll():
-    return jsonify({"followers": str(followers)})
+    return render_template('/followers.html', followers_num = followers)
+    # return jsonify({"followers": str(followers)})

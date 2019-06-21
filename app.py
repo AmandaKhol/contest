@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from contest import file_name, try_number, check_file, num_foll
+from contest import file_name, try_number, check_file, num_foll, render_template
 
 
 def setup_app():
@@ -9,7 +9,7 @@ def setup_app():
 
     # SETUP URLS
     app.add_url_rule('/try_number', methods=['POST'], view_func=try_number)
-    app.add_url_rule('/num_followers', methods=['GET'], view_func=num_foll)
+    app.add_url_rule('/followers', methods=['GET'], view_func=num_foll)
 
     return app
 
