@@ -1,0 +1,15 @@
+body {
+  background: rgba(13, 174, 223, 0.3);
+}
+
+div {
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 150px;
+  font-weight: bold;
+}

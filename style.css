@@ -1,16 +1,34 @@
-.text {
-  height: 100px;
+body {
+  background: rgba(255, 255, 255, 0.3);
+}
+.first {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
   text-align: center;
+  font-weight: bold;
+}
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: baseline;
 }
 
 #button {
-  background: #ccc;
+  height: 75vh;
   display: flex;
-  height: 500px;
-  flex-wrap: wrap;
-  align-content: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
+
 .circulo {
   display: flex;
   justify-content: center;
@@ -25,14 +43,14 @@
     #8f001a 60%,
     #8f001a 70%
   );
-  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.7), 8px 8px 8px #ff4d4d;
+
   margin: 30px;
 }
 
 .agujero1,
 .agujero2 {
   position: relative;
-
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -41,4 +59,26 @@
 }
 .agujero2 {
   transform: translatex(90%);
+}
+
+.circulo:hover {
+  background: radial-gradient(
+    circle,
+    #669999 50%,
+    #476b6b 50%,
+    #669999 60%,
+    #669999 70%
+  );
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.7), 8px 8px 8px #75a3a3;
+}
+
+.circulo:active {
+  background: radial-gradient(
+    circle,
+    #009933 50%,
+    #006622 50%,
+    #009933 60%,
+    #009933 70%
+  );
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.7), 8px 8px 8px #00cc44;
 }
