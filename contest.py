@@ -35,7 +35,6 @@ def try_number():
     update_file()
 
     if not number_check(num, 11):
-        # return render_template('/followers.html', followers_num= code), 200
         return jsonify({'message': 'prueba otra vez'}), 200
 
     return jsonify({'message': 'has ganado'}), 200

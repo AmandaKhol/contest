@@ -9,8 +9,8 @@ def setup_app():
 
     # SETUP URLS
     app.add_url_rule('/', methods=['GET'], view_func=main_site)
-    app.add_url_rule('/try_number', methods=['POST'], view_func=try_number)
     app.add_url_rule('/followers', methods=['GET'], view_func=num_foll)
+    app.add_url_rule('/api/try_number', methods=['POST'], view_func=try_number)
 
     return app
 
