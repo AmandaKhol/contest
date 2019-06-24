@@ -9,7 +9,7 @@ password = 'hola'
 
 
 def main_site():
-    return render_template('/index.html'), 200
+    return render_template('index.html'), 200
 
 def try_number():
     result = request
@@ -90,5 +90,4 @@ def number_check(follower_number, number):
         return False
 
 def num_foll():
-    return render_template('/followers.html', followers_num = followers), 200
-    # return jsonify({"followers": str(followers)})
+    return render_template('followers.html', followers_num = followers), 200

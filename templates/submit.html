@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flexbox</title>
+    <title>Submit</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/static/css/style_submit.css" />
+    <link rel="stylesheet" href="static/css/style_submit.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,900"
       rel="stylesheet"
@@ -11,18 +11,23 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   </head>
   <body>
- <form action="/try_number" method="post">
-<div class=container>
-<div>
-   <label for="password">Password</label>
-    <input type="text" name="password" required /></div>
-<div>
-  <label for="number_give">Number (from 100 to 999)</label>
-   <input type="text" name="number_give" required /></div>
-
-</div>
-<div class=ready>
-<div> <input type="submit" value="Ready!" /></div>
-  </form>
+    <form
+      enctype="application/json"
+      action="http://localhost:5000/try_number"
+      method="post"
+    >
+      <div class="container">
+        <div>
+          <label for="password">Password</label>
+          <input type="text" name="code" value="hola120" required />
+        </div>
+        <!-- <div>
+          <label for="number_give">Number (from 100 to 999)</label>
+           <input type="text" name="number_give" required /></div>  -->
+      </div>
+      <div class="ready">
+        <div><input type="submit" value="Ready!" /></div>
+      </div>
+    </form>
   </body>
 </html>

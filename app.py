@@ -4,11 +4,11 @@ from contest import file_name, try_number, check_file, num_foll, render_template
 
 
 def setup_app():
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder='templates')
     CORS(app=app, supports_credentials=True)
 
     # SETUP URLS
-    app.add_url_rule('/main', methods=['GET'], view_func=main_site)
+    app.add_url_rule('/', methods=['GET'], view_func=main_site)
     app.add_url_rule('/try_number', methods=['POST'], view_func=try_number)
     app.add_url_rule('/followers', methods=['GET'], view_func=num_foll)
 
