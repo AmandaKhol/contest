@@ -1,5 +1,5 @@
 import os.path
-
+import json
 from flask import jsonify, request, render_template
 
 file_name = 'saved_number'
@@ -8,11 +8,16 @@ followers = 0
 password = 'hola'
 
 
+def main_site():
+    return render_template('/index.html'), 200
+
 def try_number():
-    if not request.json:
+    result = request
+
+    if not result.json:
         return jsonify({'message': 'todo mal'}), 400
 
-    code = request.json.get('code', None)
+    code = result.json.get('code', None)
 
     if not code:
         return jsonify({'message': 'send any code'}), 400
@@ -26,12 +31,20 @@ def try_number():
     num = num + number
     followers = followers + 1
 
+
     update_file()
 
     if not number_check(num, 11):
+        # return render_template('/followers.html', followers_num= code), 200
         return jsonify({'message': 'prueba otra vez'}), 200
 
     return jsonify({'message': 'has ganado'}), 200
+
+# def submision_result():
+#     password = request.form['password']
+#     number = request.form['number_give']
+#     jsonify({'code' : password + number})
+#     try_number()
 
 
 def check_file():
@@ -77,5 +90,5 @@ def number_check(follower_number, number):
         return False
 
 def num_foll():
-    return render_template('/followers.html', followers_num = followers)
+    return render_template('/followers.html', followers_num = followers), 200
     # return jsonify({"followers": str(followers)})
