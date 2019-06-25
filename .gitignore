@@ -105,3 +105,4 @@ venv.bak/
 
 saved_number
 .vscode
+*.swp
