@@ -11,20 +11,37 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   </head>
   <body>
-    <form action="http://localhost:5000/api/try_number" method="post">
+    <form
+      id="participacion"
+      action="http://localhost:5000/api/try_number"
+      method="post"
+    >
       <div class="container">
         <div>
           <label for="password">Password</label>
-          <input id="password" type="text" name="password_given" required />
+          <input
+            id="password"
+            type="text"
+            name="password_given"
+            value="hola"
+            required
+          />
         </div>
         <div>
           <label for="number_give">Number (from 100 to 999)</label>
-          <input id="number_give" type="text" name="number_given" required />
+          <input
+            id="number_give"
+            type="text"
+            name="number_given"
+            value="123"
+            required
+          />
         </div>
       </div>
       <div class="ready">
         <div><input type="submit" value="Ready!" /></div>
       </div>
     </form>
+    <script src="static/css/script_submit.js"></script>
   </body>
 </html>

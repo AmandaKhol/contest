@@ -9,7 +9,8 @@ password = 'hola'
 
 
 def main_site():
-    return render_template('index.html'), 200
+    return render_template('index_main.html'), 200
+
 
 def try_number():
     result = request
@@ -30,7 +31,6 @@ def try_number():
     global followers
     num = num + number
     followers = followers + 1
-
 
     update_file()
 
@@ -88,5 +88,10 @@ def number_check(follower_number, number):
     else:
         return False
 
+
 def num_foll():
-    return render_template('followers.html', followers_num = followers), 200
+    return render_template('followers.html', followers_num=followers), 200
+
+
+def submission():
+    return render_template('submit_api.html'), 2
