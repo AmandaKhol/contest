@@ -11,11 +11,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   </head>
   <body>
-    <form
-      id="participacion"
-      action="http://localhost:5000/api/try_number"
-      method="post"
-    >
+    <form id="participacion" method="post">
       <div class="container">
         <div>
           <label for="password">Password</label>
@@ -39,7 +35,7 @@
         </div>
       </div>
       <div class="ready">
-        <div><input type="submit" value="Ready!" /></div>
+        <div><button type="button" onclick="sendData()">Click Me!</button>
       </div>
     </form>
     <script src="static/css/script_submit.js"></script>
