@@ -3,7 +3,7 @@
   <head>
     <title>Submit</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="static/css/style_submit.css" />
+    <!-- <link rel="stylesheet" href="static/css/style_submit.css" /> -->
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,900"
       rel="stylesheet"
@@ -11,33 +11,47 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   </head>
   <body>
-    <form id="participacion" method="post">
-      <div class="container">
-        <div>
-          <label for="password">Password</label>
-          <input
-            id="password"
-            type="text"
-            name="password_given"
-            value="hola"
-            required
-          />
+
+      <form id="amandaForm">
+          <div class="container">
+              <div><label for="password">Password</label>
+          <input type="text" name="password_given" id="password_given" value="hola"></div>
+          <div></div><label for="number_give">Number (from 100 to 999)</label>
+          <input type="text" name="number_given" id="number_give" value="123"> </div>
         </div>
-        <div>
-          <label for="number_give">Number (from 100 to 999)</label>
-          <input
-            id="number_give"
-            type="text"
-            name="number_given"
-            value="123"
-            required
-          />
-        </div>
-      </div>
-      <div class="ready">
-        <div><button type="button" onclick="sendData()">Click Me!</button>
-      </div>
-    </form>
-    <script src="static/css/script_submit.js"></script>
+        <div class="ready"><input type="submit" name="manda" id="manda" value="submit"></div>
+        </form>
+        <div id="message"></div>
+        <script charset="utf-8">
+            const element = document.getElementById("amandaForm");
+      
+            element.addEventListener("submit", function(event) {
+              event.preventDefault();
+      
+              inputs = event.target.getElementsByTagName("input");
+      
+              let number = inputs.number_given.value;
+              let password = inputs.password_given.value;
+      
+              let object = JSON.stringify({ code: password + number });
+      
+              var props =
+                { method: 'POST', // or 'PUT'
+                body: object,
+                headers:{
+                  'Content-Type': 'application/json'
+                }
+                }
+      
+              fetch('http://localhost:5000/api/try_number', props)
+                .then(function(response) {
+                  console.log(response.json())
+                  // document.getElementById("message").innerText(response.json());
+                })
+                .then(function(myJson) {
+                   console.log(myJson);
+                });
+            });
+          </script>
   </body>
 </html>
