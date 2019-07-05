@@ -40,8 +40,7 @@ Border boxing
 * {
   box-sizing: border-box;
 }
-
-.container {
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,32 +48,11 @@ Border boxing
   border: 20px solid red;
 }
 
-.container div {
+form input {
   display: flex;
   justify-content: space-between;
   width: 600px;
   padding: 10px;
-  margin: 20px;
+  margin: 10px;
   border: 1px solid red;
-}
-
-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.ready {
-  display: flex;
-  justify-content: center;
-}
-input[type="submit"] {
-  text-decoration: none;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 20px;
-  color: #ffffff;
-  background-color: #1883ba;
-  border-radius: 6px;
-  border: 2px solid #0016b0;
 }

@@ -1,9 +1,29 @@
-function recogeDatos() {
-  var pass = document.querySelector("#password").value;
-  var number = document.querySelector("#number_give").value;
-  var result = {
-    code: pass + number
+const element = document.getElementById("amandaForm");
+
+element.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  inputs = event.target.getElementsByTagName("input");
+
+  let number = inputs.number_given.value;
+  let password = inputs.password_given.value;
+
+  let object = JSON.stringify({ code: password + number });
+
+  var props = {
+    method: "POST", // or 'PUT'
+    body: object,
+    headers: {
+      "Content-Type": "application/json"
+    }
   };
-  console.log(result);
-  return result;
-}
+
+  fetch("http://localhost:5000/api/try_number", props)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+      document.getElementById("messageScreen").innerText = data.message;
+    });
+});

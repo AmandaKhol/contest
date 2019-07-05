@@ -3,7 +3,7 @@
   <head>
     <title>Submit</title>
     <meta charset="utf-8" />
-    <!-- <link rel="stylesheet" href="static/css/style_submit.css" /> -->
+    <link rel="stylesheet" href="static/css/style_submit.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,900"
       rel="stylesheet"
@@ -12,48 +12,13 @@
   </head>
   <body>
     <form id="amandaForm">
-      <input
-        type="text"
-        name="password_given"
-        id="password_given"
-        value="hola"
-      />
-
-      <input type="text" name="number_given" id="number_give" value="123" />
-
+      <label for="password">Password</label>
+      <input type="text" name="password_given" id="password_given" required />
+      <label for="number_give">Number (from 100 to 999)</label>
+      <input type="text" name="number_given" id="number_given" required />
       <input type="submit" name="manda" id="manda" value="submit" />
     </form>
     <div id="messageScreen"></div>
-    <script charset="utf-8">
-      const element = document.getElementById("amandaForm");
-
-      element.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        inputs = event.target.getElementsByTagName("input");
-
-        let number = inputs.number_given.value;
-        let password = inputs.password_given.value;
-
-        let object = JSON.stringify({ code: password + number });
-
-        var props = {
-          method: "POST", // or 'PUT'
-          body: object,
-          headers: {
-            "Content-Type": "application/json"
-          }
-        };
-
-        fetch("http://localhost:5000/api/try_number", props)
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(data) {
-            console.log(data);
-            document.getElementById("messageScreen").innerText = data.message;
-          });
-      });
-    </script>
+    <script src="static/css/script_submit.js"></script>
   </body>
 </html>
