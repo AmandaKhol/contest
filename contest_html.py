@@ -11,6 +11,7 @@ password = 'hola'
 def main_site():
     return render_template('index_main.html'), 200
 
+
 def try_number():
     password_given = request.form['password_given']
     number_given = request.form['number_given']
@@ -25,25 +26,25 @@ def try_number():
 
     ok, number = get_number(password_given, number_given)
     if not ok:
-        return render_template('followers.html', followers_num = "you do not meet the requirements"), 200
+        return render_template('followers.html', followers_num="you do not meet the requirements"), 200
 
     global num
     global followers
     num = num + number
     followers = followers + 1
 
-
     update_file()
 
     if not number_check(num, 11):
-        return render_template('followers.html', followers_num = "try again!"), 200
+        return render_template('followers.html', followers_num="try again!"), 200
 
-    return render_template('followers.html', followers_num = "you win!"), 200
+    return render_template('followers.html', followers_num="you win!"), 200
+
 
 def submision_result():
-     password_given = request.form['password_given']
-     number_given = request.form['number_given']
-     return render_template('followers.html', followers_num = password_given + number_given), 200
+    password_given = request.form['password_given']
+    number_given = request.form['number_given']
+    return render_template('followers.html', followers_num=password_given + number_given), 200
 
 
 def check_file():
@@ -88,8 +89,10 @@ def number_check(follower_number, number):
     else:
         return False
 
+
 def num_foll():
-    return render_template('followers.html', followers_num = followers), 200
+    return render_template('followers.html', followers_num=followers), 200
+
 
 def submission():
     return render_template('submit.html'), 200
