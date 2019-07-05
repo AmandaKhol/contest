@@ -47,12 +47,11 @@
 
         fetch("http://localhost:5000/api/try_number", props)
           .then(function(response) {
-            document.getElementById(
-              "messageScreen"
-            ).innerText = response.json();
+            return response.json();
           })
-          .then(function(myJson) {
-            console.log(myJson);
+          .then(function(data) {
+            console.log(data);
+            document.getElementById("messageScreen").innerText = data.message;
           });
       });
     </script>
