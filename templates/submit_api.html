@@ -5,20 +5,24 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="static/css/style_submit.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,900"
+      href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap"
       rel="stylesheet"
     />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   </head>
   <body>
+    <div id="messageScreen" class="mensaje"></div>
     <form id="amandaForm">
-      <label for="password">Password</label>
-      <input type="text" name="password_given" id="password_given" required />
-      <label for="number_give">Number (from 100 to 999)</label>
-      <input type="text" name="number_given" id="number_given" required />
+      <label for="password"
+        >Password
+        <input type="text" name="password_given" id="password_given" required
+      /></label>
+      <label for="number_give"
+        >Number (from 100 to 999)
+        <input type="text" name="number_given" id="number_given" required
+      /></label>
       <input type="submit" name="manda" id="manda" value="submit" />
     </form>
-    <div id="messageScreen"></div>
     <script src="static/css/script_submit.js"></script>
   </body>
 </html>
