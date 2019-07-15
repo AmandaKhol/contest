@@ -35,15 +35,16 @@ def try_number():
     update_file()
 
     if not number_check(num, 11):
-        return jsonify({'message': 'prueba otra vez'}), 200
+        return jsonify({'message': 'try again'}), 200
 
-    return jsonify({'message': 'has ganado'}), 200
+    return jsonify({'message': 'you win!'}), 200
 
-# def submision_result():
-#     password = request.form['password']
-#     number = request.form['number_give']
-#     jsonify({'code' : password + number})
-#     try_number()
+
+def submision_result():
+    password = request.form['password']
+    number = request.form['number_give']
+    jsonify({'code': password + number})
+    try_number()
 
 
 def check_file():
